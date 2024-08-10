@@ -44,7 +44,7 @@ func main() {
 	router.POST("/user/login", controllers.Login)
 	router.POST("/user/register", controllers.Register)
 	// Group routes that require basic auth
-	authorized := router.Group("/", gin.BasicAuth(gin.Accounts{
+	authorized := router.Group("/api/", gin.BasicAuth(gin.Accounts{
 		"admin": "admin",
 	}))
 
