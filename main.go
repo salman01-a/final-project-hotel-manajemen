@@ -56,10 +56,12 @@ func main() {
 
 	authorized.GET("bookings", controllers.GetAllBooking)
 	authorized.POST("bookings", controllers.InsertBooking)
+	authorized.GET("bookings/:id", controllers.GetBookingByID)
 	authorized.PUT("bookings/:id", controllers.UpdateBooking)
 	authorized.DELETE("bookings/:id", controllers.DeleteBooking)
 
 	authorized.GET("payments", controllers.GetAllPayment)
+	authorized.GET("payments/:id", controllers.GetPaymentByID)
 	authorized.POST("payments", controllers.InsertPayment)
 	authorized.PUT("payments/:id", controllers.UpdatePayment)
 	authorized.DELETE("payments/:id", controllers.DeletePayment)

@@ -41,3 +41,8 @@ func DeletePayment(db *sql.DB, payment models.Payment) (err error) {
 	errs := db.QueryRow(sql, payment.ID)
 	return errs.Err()
 }
+func GetPaymentByID(db *sql.DB, id int) (payment models.Payment, err error) {
+	sql := "SELECT id, booking_id, amount, payment_date, status FROM payments WHERE id=$1"
+	err = db.QueryRow(sql, id).Scan(&payment.ID, &payment.BookingID, &payment.Amount, &payment.PaymentDate, &payment.Status)
+	return
+}

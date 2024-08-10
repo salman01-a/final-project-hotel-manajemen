@@ -67,3 +67,14 @@ func DeleteBooking(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, booking)
 }
+func GetBookingByID(c *gin.Context) {
+	id, _ := strconv.Atoi(c.Param("id"))
+
+	booking, err := repository.GetBookingByID(database.DbConnection, id)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"result": "Booking not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"result": booking})
+}

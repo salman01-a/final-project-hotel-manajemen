@@ -41,3 +41,8 @@ func DeleteBooking(db *sql.DB, booking models.Booking) (err error) {
 	errs := db.QueryRow(sql, booking.ID)
 	return errs.Err()
 }
+func GetBookingByID(db *sql.DB, id int) (booking models.Booking, err error) {
+	sql := "SELECT id, room_id, user_id, check_in, check_out, status, created_at FROM bookings WHERE id=$1"
+	err = db.QueryRow(sql, id).Scan(&booking.ID, &booking.RoomID, &booking.UserID, &booking.CheckIn, &booking.CheckOut, &booking.Status, &booking.CreatedAt)
+	return
+}

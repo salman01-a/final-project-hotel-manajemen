@@ -67,3 +67,14 @@ func DeletePayment(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, payment)
 }
+func GetPaymentByID(c *gin.Context) {
+	id, _ := strconv.Atoi(c.Param("id"))
+
+	payment, err := repository.GetPaymentByID(database.DbConnection, id)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"result": "Payment not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"result": payment})
+}
