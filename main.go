@@ -50,6 +50,7 @@ func main() {
 
 	authorized.GET("rooms", controllers.GetAllRoom)
 	authorized.POST("rooms", controllers.InsertRoom)
+	authorized.GET("rooms/:id", controllers.GetRoomByID)
 	authorized.PUT("rooms/:id", controllers.UpdateRoom)
 	authorized.DELETE("rooms/:id", controllers.DeleteRoom)
 

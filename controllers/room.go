@@ -67,3 +67,14 @@ func DeleteRoom(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, room)
 }
+func GetRoomByID(c *gin.Context) {
+	id, _ := strconv.Atoi(c.Param("id"))
+
+	room, err := repository.GetRoomByID(database.DbConnection, id)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"result": "Room not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"result": room})
+}

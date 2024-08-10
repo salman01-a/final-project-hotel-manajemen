@@ -41,3 +41,8 @@ func DeleteRoom(db *sql.DB, room models.Room) (err error) {
 	errs := db.QueryRow(sql, room.ID)
 	return errs.Err()
 }
+func GetRoomByID(db *sql.DB, id int) (room models.Room, err error) {
+	sql := "SELECT id, room_number, type, price, status, created_at FROM rooms WHERE id=$1"
+	err = db.QueryRow(sql, id).Scan(&room.ID, &room.RoomNumber, &room.Type, &room.Price, &room.Status, &room.CreatedAt)
+	return
+}
