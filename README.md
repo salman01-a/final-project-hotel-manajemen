@@ -47,9 +47,9 @@ The application configuration is stored in `config/.env`. Make sure to update th
 ## Template For Adding Data
 ### For Adding data user / register
 {
-    "username":"adi",
-    "password":"adi123",
-    "email":"adi@gmail.com",
+    "username":"salman",
+    "password":"salman123",
+    "email":"salman@gmail.com",
     "role":"user"
 }
 
@@ -63,10 +63,12 @@ The application configuration is stored in `config/.env`. Make sure to update th
 }
 ### For adding booking data
 {
-  "room_number": "102",
-  "type": "Double",
-  "price": 150,
-  "status": "Occupied"
+    "id": 1,
+    "room_id": 1,
+    "user_id": 1,
+    "check_in": "2024-08-10T12:00:00Z",
+    "check_out": "2024-08-12T12:00:00Z",
+    "status": "Confirmed"
 }
 ### For adding payment data
 {
