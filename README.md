@@ -43,3 +43,36 @@ The server will start on `localhost:8080` by default.
 ## Configuration
 
 The application configuration is stored in `config/.env`. Make sure to update the database connection details before running the application.
+
+## Template For Adding Data
+### For Adding data user / register
+{
+    "username":"adi",
+    "password":"adi123",
+    "email":"adi@gmail.com",
+    "role":"user"
+}
+
+### For adding room data
+{
+    "id": 1,
+    "room_number": "101",
+    "type": "Single",
+    "price": 100,
+    "status": "Available"
+}
+### For adding booking data
+{
+  "room_number": "102",
+  "type": "Double",
+  "price": 150,
+  "status": "Occupied"
+}
+### For adding payment data
+{
+  "id": 1,
+  "booking_id": 1,
+  "amount": 200,
+  "payment_date": "2024-08-10T12:00:00Z",
+  "status": "Completed"
+}
