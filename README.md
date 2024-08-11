@@ -55,7 +55,6 @@ The application configuration is stored in `config/.env`. Make sure to update th
 
 ### For adding room data
 {
-    "id": 1,
     "room_number": "101",
     "type": "Single",
     "price": 100,
@@ -63,7 +62,6 @@ The application configuration is stored in `config/.env`. Make sure to update th
 }
 ### For adding booking data
 {
-    "id": 1,
     "room_id": 1,
     "user_id": 1,
     "check_in": "2024-08-10T12:00:00Z",
@@ -72,7 +70,6 @@ The application configuration is stored in `config/.env`. Make sure to update th
 }
 ### For adding payment data
 {
-  "id": 1,
   "booking_id": 1,
   "amount": 200,
   "payment_date": "2024-08-10T12:00:00Z",
