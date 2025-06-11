@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
@@ -41,6 +42,7 @@ func main() {
 	database.DBMigrate(DB)
 
 	router := gin.Default()
+	router.Use(cors.Default())
 	router.POST("/user/login", controllers.Login)
 	router.POST("/user/register", controllers.Register)
 	// Group routes that require basic auth
